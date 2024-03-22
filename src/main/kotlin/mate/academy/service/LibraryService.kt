@@ -14,7 +14,7 @@ class LibraryService {
     }
 
     fun searchByAuthor(authorName: String): List<Book> {
-        var result: MutableList<Book> = mutableListOf()
+        val result: MutableList<Book> = mutableListOf()
         for (book in books) {
             for (author in book.authors) {
                 if (author.name.contains(authorName, ignoreCase = true)) {
@@ -26,9 +26,6 @@ class LibraryService {
     }
 
     fun searchByGenre(genre: String): List<Book> {
-        if (genre.length === 0) {
-            return listOf()
-        }
-        return books.filter { book -> book.genre.contains(genre, ignoreCase = true) }
+        return books.filter { book -> book.genre.equals(genre, ignoreCase = true) }
     }
 }
