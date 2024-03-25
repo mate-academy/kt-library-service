@@ -1,10 +1,20 @@
 package mate.academy
 
+private const val TEST_PUBLISH_YEAR = 2020
+
 fun main() {
     val libraryService = LibraryService()
-    libraryService.addBook(Book("Book1", listOf(Author("Author1")), 2020, "Detective", "123456789"))
-    libraryService.addBook(Book("Title not for search", listOf(Author("Author2")), 2020, "Fantasy", "123456789"))
-    libraryService.addBook(Book("Book2", listOf(Author("Wrong")), 2020, "Fantasy", "123456789"))
+    libraryService.addBook(Book("Book1", listOf(Author("Author1")), TEST_PUBLISH_YEAR, "Detective", "123456789"))
+    libraryService.addBook(
+        Book(
+            "Title not for search",
+            listOf(Author("Author2")),
+            TEST_PUBLISH_YEAR,
+            "Fantasy",
+            "123456789"
+        )
+    )
+    libraryService.addBook(Book("Book2", listOf(Author("Wrong")), TEST_PUBLISH_YEAR, "Fantasy", "123456789"))
     println(libraryService.searchByAuthor("Author"))
     println(libraryService.searchByTitle("Book"))
     println(libraryService.searchByGenre("Fantasy"))
