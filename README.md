@@ -1,4 +1,3 @@
-
 # Library Service
 
 In this task, you will enhance a basic library management system in **Kotlin** by implementing several functions in the `LibraryService` class.
@@ -10,25 +9,25 @@ Additionally, you are provided with two data classes: `Book` and `Author`.
  - A `Book` contains a **title, list of authors, publication date, genre,** and **ISBN** fields.
  - An `Author` data class has only one field, **name**.
 
-##Instructions
+## Instructions
 
 1. Create an `Author` class with a single field `name` of type `String`.
 
 2. Create a `Book` class with the fields described below. Please put them in the order as follows:
 
-   - `title` of type `String`
+   - `title` of type `String`;
 
-   - `authors` of type `List<Author>`
+   - `authors` of type `List<Author>`;
 
-   - `publicationYear` of type `Int`
+   - `publicationYear` of type `Int`;
 
-   - `genre` of type `String`
+   - `genre` of type `String`;
 
-   - `isbn` of type `String`
+   - `isbn` of type `String`;
 
 3. Implement the `addBook(book: Book)` method to add a new book to the library. 
 
-💡**HINT:** use some collection here. Book duplicates are allowed.
+💡Use some collection here. Book duplicates are allowed.
 
 4. Implement the `searchByTitle(title: String): List<Book>` method to return a list of books that contain the given title. The search should be case-insensitive.
 
