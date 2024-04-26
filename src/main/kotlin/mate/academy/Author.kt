@@ -1,4 +1,3 @@
 package mate.academy
 
-data class Author(val name: String) {
-}
+data class Author(val name: String)
