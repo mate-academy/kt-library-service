@@ -19,3 +19,10 @@ class LibraryService {
         return allBooks.filter { it.genre.lowercase() == genre.lowercase() }
     }
 }
+
+data class Author(val name: String) {
+}
+
+data class Book(var title: String, var authors: List<Author>, var publicationYear : Int,
+                var genre : String, var isbn : String) {
+}
