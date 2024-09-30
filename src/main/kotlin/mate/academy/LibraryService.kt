@@ -20,9 +20,7 @@ class LibraryService {
     }
 }
 
-data class Author(val name: String) {
-}
+data class Author(val name: String)
 
-data class Book(var title: String, var authors: List<Author>, var publicationYear : Int,
-                var genre : String, var isbn : String) {
-}
+data class Book(val title: String, val authors: List<Author>, val publicationYear : Int,
+                val genre : String, val isbn : String)
