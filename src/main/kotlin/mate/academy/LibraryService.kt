@@ -10,10 +10,9 @@ class LibraryService {
     }
 
     fun searchByTitle(title: String): List<Book> {
-        if (title.isEmpty()) {
-            return library
-        }
-        return library.filter { it.title.contains(title, true) }
+        return if (title.isEmpty())
+            library
+        else library.filter { it.title.contains(title, true) }
     }
 
 
