@@ -3,7 +3,7 @@ package mate.academy
 import mate.academy.model.Book
 
 class LibraryService {
-    val library: MutableList<Book> = mutableListOf()
+    private val library: MutableList<Book> = mutableListOf()
 
     fun addBook(book: Book) {
         library.add(book)
