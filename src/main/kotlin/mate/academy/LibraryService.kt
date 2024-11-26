@@ -16,6 +16,7 @@ class LibraryService {
         .filter { it.authors.find { author -> author.name.contains(authorName, true) } != null }
 
 
-    fun searchByGenre(genre: String): List<Book> = library.filter { it.genre.equals(genre, true) }
+    fun searchByGenre(genre: String): List<Book> = library
+        .filter { it.genre.equals(genre, true) }
 
 }
