@@ -13,7 +13,9 @@ class LibraryService {
 
 
     fun searchByAuthor(authorName: String): List<Book> {
-        return books.filter { b -> b.authors.filter { a -> a.name.contains(authorName, true) }.isNotEmpty() }
+        return books
+            .filter { b -> b.authors.filter { a -> a.name.contains(authorName, true) }
+                .isNotEmpty() }
     }
 
     fun searchByGenre(genre: String): List<Book> {
