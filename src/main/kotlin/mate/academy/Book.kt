@@ -6,5 +6,4 @@ data class Book(
     val publicationYear : Int,
     val genre : String,
     val isbn : String
-) {
-}
+)
