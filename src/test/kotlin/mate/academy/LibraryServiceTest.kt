@@ -1,5 +1,7 @@
 package mate.academy
 
+import mate.academy.data.Author
+import mate.academy.data.Book
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertTrue
