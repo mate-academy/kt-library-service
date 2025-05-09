@@ -1,20 +1,41 @@
 package mate.academy
 
 class LibraryService {
+    val books: MutableList<Book> = mutableListOf()
     fun addBook(book: Book) {
-        // TODO: implement
+        books.add(book)
     }
 
     fun searchByTitle(title: String): List<Book> {
-        // TODO: implement
+        val booksTitle: MutableList<Book> = mutableListOf()
+        for (book in books) {
+            if (book.title.lowercase().contains(title.lowercase())) {
+                booksTitle.add(book)
+            }
+        }
+        return booksTitle
     }
 
 
     fun searchByAuthor(authorName: String): List<Book> {
-        // TODO: implement
+        val booksAuthor: MutableList<Book> = mutableListOf()
+        for (book in books) {
+            for (author in book.authors) {
+                if (author.name.lowercase().contains(authorName.lowercase())) {
+                    booksAuthor.add(book)
+                }
+            }
+        }
+        return booksAuthor
     }
 
     fun searchByGenre(genre: String): List<Book> {
-        // TODO: implement
+        val booksGenre: MutableList<Book> = mutableListOf()
+        for (book in books) {
+            if (book.genre.lowercase() == genre.lowercase()) {
+                booksGenre.add(book)
+            }
+        }
+        return booksGenre
     }
 }
