@@ -14,10 +14,11 @@ class LibraryServiceTest {
         libraryService = LibraryService()
     }
 
-    private fun createBook(title: String, authorName: String, publicationYear: Int, genre: String, isbn: String): Book {
-        return Book(
+    private fun createBook(title: String, authorName: String, publicationYear: Int,
+                           genre: String, isbn: String): LibraryService.Book {
+        return LibraryService.Book(
             title = title,
-            authors = listOf(Author(name = authorName)),
+            authors = listOf(LibraryService.Author(name = authorName)),
             publicationYear = publicationYear,
             genre = genre,
             isbn = isbn
@@ -199,9 +200,9 @@ class LibraryServiceTest {
     @Test
     fun searchByAuthor_MultipleAuthorsIncludingSearchedOne_ReturnsCorrectBooks() {
         // given
-        val book = Book(
+        val book = LibraryService.Book(
             title = "Title",
-            authors = listOf(Author("First Author"), Author("Second Author")),
+            authors = listOf(LibraryService.Author("First Author"), LibraryService.Author("Second Author")),
             publicationYear = 2020,
             genre = "Fiction",
             isbn = "12345"
@@ -272,13 +273,13 @@ class LibraryServiceTest {
 
     @Test
     fun bookClass_UsesDataClass_AssertsTrue() {
-        val bookClass = Book::class
+        val bookClass = LibraryService.Book::class
         assertTrue(bookClass.isData, "Book class should be a data class.")
     }
 
     @Test
     fun authorClass_UsesDataClass_AssertsTrue() {
-        val authorClass = Author::class
+        val authorClass = LibraryService.Author::class
         assertTrue(authorClass.isData, "Author class should be a data class.")
     }
 }
