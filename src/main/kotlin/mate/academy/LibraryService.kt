@@ -1,20 +1,28 @@
 package mate.academy
 
-class LibraryService {
+import models.Author
+import models.Book
+
+
+
+class LibraryService(private val books: MutableList<Book> = mutableListOf()) {
+
     fun addBook(book: Book) {
-        // TODO: implement
+        books.add(book)
     }
 
     fun searchByTitle(title: String): List<Book> {
-        // TODO: implement
+        return books.filter { it.getTitle().contains(title, ignoreCase = true) }
     }
 
 
     fun searchByAuthor(authorName: String): List<Book> {
-        // TODO: implement
+        return books.filter { book ->
+            book.getAuthors().any { author -> author.getName().contains(authorName, ignoreCase = true) }
+        }
     }
 
     fun searchByGenre(genre: String): List<Book> {
-        // TODO: implement
+        return books.filter { it.getGenre().equals(genre, ignoreCase = true) }
     }
 }
