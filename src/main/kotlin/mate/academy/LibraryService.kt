@@ -1,20 +1,24 @@
 package mate.academy
 
+import mate.academy.model.Book
+
 class LibraryService {
+    private val books = mutableListOf<Book>()
+
     fun addBook(book: Book) {
-        // TODO: implement
+        books.add(book)
     }
 
-    fun searchByTitle(title: String): List<Book> {
-        // TODO: implement
-    }
+    fun searchByTitle(title: String): List<Book> = books.asSequence()
+        .filter { it.title.contains(title, true) }
+        .toList()
 
+    fun searchByAuthor(authorName: String): List<Book> = books.asSequence()
+        .filter { it.authors.any { it.name.contains(authorName, true) } }
+        .toList()
 
-    fun searchByAuthor(authorName: String): List<Book> {
-        // TODO: implement
-    }
-
-    fun searchByGenre(genre: String): List<Book> {
-        // TODO: implement
-    }
+    fun searchByGenre(genre: String): List<Book> = if(genre.isBlank()) emptyList()
+        else books.asSequence()
+            .filter { it.genre.contains(genre, true) }
+            .toList()
 }
